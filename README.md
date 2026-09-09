@@ -133,6 +133,7 @@ FastArduinoMotion/
 ├── Docs/
 │   └── TECHNICAL_DOCUMENTATION.md
 │
+├──FAM_0.6.3.2_Package.package
 └── README.md
 ```
 
