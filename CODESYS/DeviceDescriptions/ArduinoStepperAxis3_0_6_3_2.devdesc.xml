@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE DeviceDescription [
+<!ENTITY standardparameters SYSTEM "StandardParameters.xml">
+]>
+
+<DeviceDescription
+    xmlns="http://www.3s-software.com/schemas/DeviceDescription-1.0.xsd"
+    xmlns:ts="http://www.3s-software.com/schemas/TargetSettings-0.1.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <Types namespace="localTypes" />
+  <Strings namespace="localStrings" />
+  <Files namespace="local" />
+  <Files namespace="localFiles">
+    <Language lang="en">
+      <File fileref="local" identifier="DeviceImage">
+        <LocalFile>SM3_Drive_FAM.ico</LocalFile>
+      </File>
+    </Language>
+  </Files>
+
+  <Device>
+    <DeviceIdentification>
+      <Type>1025</Type>
+      <Id>FFFF A633</Id>
+      <Version>0.6.3.2</Version>
+    </DeviceIdentification>
+
+    <CompatibleVersions />
+
+    <DeviceInfo>
+      <Name name="localStrings:TypeName">Arduino Stepper Axis 3 - pins D10-D13</Name>
+      <Description name="localStrings:TypeDescription">SoftMotion position-controlled axis mapped to channel 3 of the
+        shared FastArduinoMotion three-axis binary node.</Description>
+      <Vendor name="localStrings:Vendor">Universitat Jaume I</Vendor>
+      <OrderNumber>FAM-3AXIS-AXIS3</OrderNumber>
+      <Icon name="localFiles:DeviceImage">SM3_Drive_FAM.ico</Icon>
+    </DeviceInfo>
+
+    <Connector
+        connectorId="1"
+        moduleType="1248"
+        interface="Common.SoftMotion.Logical"
+        role="parent"
+        explicit="false"
+        hostpath="0"
+        initialStatusFlag="241">
+      <InterfaceName name="localStrings:LogicalInterface">SM_Drive_Logical:</InterfaceName>
+      <Var />
+    </Connector>
+
+    <Connector
+        connectorId="0"
+        moduleType="1025"
+        interface="Common.SoftMotion.General"
+        role="child"
+        explicit="false">
+
+      <InterfaceName name="localStrings:GeneralInterface">Arduino Stepper Axis 3:</InterfaceName>
+
+      <Slot count="1" allowEmpty="false" />
+      <Var />
+
+      <HostParameterSet>
+        &standardparameters;
+
+        <ParameterSection>
+          <Name name="localStrings:AxisScaling">AXIS_REF: Scaling</Name>
+
+          <Parameter ParameterId="1051" type="std:DWORD">
+            <Attributes download="true" functional="false" />
+            <Default>4096</Default>
+            <Name name="localStrings:RatioDenom">dwRatioTechUnitsDenom</Name>
+            <Description name="localStrings:RatioDenomDesc">
+              4096 half-steps per output revolution.
+            </Description>
+            <Custom />
+          </Parameter>
+
+          <Parameter ParameterId="1052" type="std:DINT">
+            <Attributes download="true" functional="false" />
+            <Default>360</Default>
+            <Name name="localStrings:RatioNum">iRatioTechUnitsNum</Name>
+            <Description name="localStrings:RatioNumDesc">
+              360 application degrees per output revolution.
+            </Description>
+            <Custom />
+          </Parameter>
+
+          <Parameter ParameterId="5000" type="std:DINT">
+            <Default>4096</Default>
+            <Name name="localStrings:ScalingIncs">ScalingIncs</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5001" type="std:DINT">
+            <Default>1</Default>
+            <Name name="localStrings:ScalingMotorTurns1">ScalingMotorTurns1</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5002" type="std:DINT">
+            <Default>1</Default>
+            <Name name="localStrings:ScalingMotorTurns2">ScalingMotorTurns2</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5003" type="std:DINT">
+            <Default>1</Default>
+            <Name name="localStrings:ScalingGearOutput1">ScalingGearOutput1</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5004" type="std:DINT">
+            <Default>1</Default>
+            <Name name="localStrings:ScalingGearOutput2">ScalingGearOutput2</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5005" type="std:DINT">
+            <Default>360</Default>
+            <Name name="localStrings:ScalingUnits">ScalingUnits</Name>
+            <download>false</download>
+          </Parameter>
+
+          <Parameter ParameterId="5006" type="std:BOOL">
+            <Default>FALSE</Default>
+            <Name name="localStrings:InvertDirection">InvertDirection</Name>
+            <download>false</download>
+          </Parameter>
+        </ParameterSection>
+
+        <ParameterSection>
+          <Name name="localStrings:PosControlInput">
+            AXIS_REF_PosControl: Input
+          </Name>
+
+          <Parameter ParameterId="10000" type="std:USINT">
+            <Default>32</Default>
+            <Name name="localStrings:EncoderBitWidth">EncoderBitWidth</Name>
+          </Parameter>
+        </ParameterSection>
+
+        <ParameterSection>
+          <Name name="localStrings:PosControlOutput">
+            AXIS_REF_PosControl: Output
+          </Name>
+
+          <Parameter ParameterId="10100" type="std:DINT">
+            <Default>1000</Default>
+            <Name name="localStrings:MaximumOutputVelocityInt">
+              MaximumOutputVelocityInt
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10101" type="std:LREAL">
+            <Default>87.890625</Default>
+            <Name name="localStrings:MaximumOutputVelocityTU">
+              MaximumOutputVelocityTU
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10102" type="std:DINT">
+            <Default>-1000</Default>
+            <Name name="localStrings:MinimumOutputVelocityInt">
+              MinimumOutputVelocityInt
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10103" type="std:LREAL">
+            <Default>-87.890625</Default>
+            <Name name="localStrings:MinimumOutputVelocityTU">
+              MinimumOutputVelocityTU
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10104" type="std:DINT">
+            <Default>0</Default>
+            <Name name="localStrings:ZeroVelocityInt">ZeroVelocityInt</Name>
+          </Parameter>
+
+          <Parameter ParameterId="10105" type="std:BOOL">
+            <Default>FALSE</Default>
+            <Name name="localStrings:DirectionInverted">DirectionInverted</Name>
+          </Parameter>
+        </ParameterSection>
+
+        <ParameterSection>
+          <Name name="localStrings:PosControlController">
+            AXIS_REF_PosControl: Controller
+          </Name>
+
+          <Parameter ParameterId="10200" type="std:LREAL">
+            <Default>0.0</Default>
+            <Name name="localStrings:Kp">Kp</Name>
+          </Parameter>
+
+          <Parameter ParameterId="10202" type="std:LREAL">
+            <Default>0.0</Default>
+            <Name name="localStrings:MaxFollowingError">
+              MaxFollowingError
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10203" type="std:BOOL">
+            <Default>FALSE</Default>
+            <Name name="localStrings:EnableFollowingErrorCheck">
+              EnableFollowingErrorCheck
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10204" type="std:LREAL">
+            <Default>1.0</Default>
+            <Name name="localStrings:PartVelocityPilotControl">
+              PartVelocityPilotControl
+            </Name>
+          </Parameter>
+
+          <Parameter ParameterId="10205" type="std:LREAL">
+            <Default>2.0</Default>
+            <Name name="localStrings:DeadTime">DeadTime</Name>
+          </Parameter>
+        </ParameterSection>
+      </HostParameterSet>
+
+      <DriverInfo needsBusCycle="false">
+        <RequiredLib
+            libname="FastArduinoMotion"
+            vendor="Universitat Jaume I"
+            version="0.6.3.2"
+            identifier="deviceLib">
+
+          <FBInstance
+              basename="$(DeviceName)"
+              fbname="AXIS_REF_ArduinoStepperAxis3"
+              fbnamediag="AXIS_REF_ArduinoStepperAxis3">
+
+            <Initialize methodName="Initialize" />
+
+            <CyclicCall methodname="BeforeReadInputs"
+                task="#buscycletask" whentocall="beforeReadInputs" />
+
+            <CyclicCall methodname="AfterReadInputs"
+                task="#buscycletask" whentocall="afterReadInputs" />
+
+            <CyclicCall methodname="BeforeWriteOutputs"
+                task="#buscycletask" whentocall="beforeWriteOutputs" />
+
+            <CyclicCall methodname="AfterWriteOutputs"
+                task="#buscycletask" whentocall="afterWriteOutputs" />
+
+          </FBInstance>
+        </RequiredLib>
+      </DriverInfo>
+    </Connector>
+  </Device>
+</DeviceDescription>

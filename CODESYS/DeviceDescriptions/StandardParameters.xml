@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ParameterSection>
+  <Name name="local:AXIS_REF">AXIS_REF: Standard</Name>
+
+  <Parameter ParameterId="1021" type="std:WORD">
+    <Attributes download="true" functional="false" />
+    <Default>1</Default>
+    <Name name="x">wDriveID</Name>
+    <Description name="x">Unique ID of the drive</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1040" type="std:BOOL">
+    <Attributes download="true" functional="false" />
+    <Default>FALSE</Default>
+    <Name name="x">bVirtual</Name>
+    <Description name="x">Whether the drive is simulated</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1060" type="std:INT">
+    <Attributes download="true" functional="false" />
+    <Default>0</Default>
+    <Name name="x">iMovementType</Name>
+    <Description name="x">Movement type: 0: modulo, 1: finite</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1061" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>360.0</Default>
+    <Name name="x">fPositionPeriod</Name>
+    <Description name="x">Modulo period value for modulo drives [u]</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1205" type="std:BOOL">
+    <Attributes download="true" functional="false" />
+    <Default>FALSE</Default>
+    <Name name="x">bSWLimitEnable</Name>
+    <Description name="x">Activate/deactivate software limits</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1201" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>0.0</Default>
+    <Name name="x">fSWLimitNegative</Name>
+    <Description name="x">Software limit in negative direction</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1200" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>360.0</Default>
+    <Name name="x">fSWLimitPositive</Name>
+    <Description name="x">Software limit in positive direction</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1062" type="std:INT">
+    <Attributes download="true" functional="false" />
+    <Default>0</Default>
+    <Name name="x">eRampType</Name>
+    <Description name="x">The velocity ramp used for trajectories.</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1144" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>1000</Default>
+    <Name name="x">fRampJerk</Name>
+    <Description name="x">Jerk used for bringing acceleration to 0 when sin² ramp is interrupted.</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1113" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>40</Default>
+    <Name name="x">fSWMaxVelocity</Name>
+    <Description name="x">Maximum velocity magnitude (software limit)</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1123" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>100</Default>
+    <Name name="x">fSWMaxAcceleration</Name>
+    <Description name="x">Maximum acceleration magnitude (software limit)</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1133" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>100</Default>
+    <Name name="x">fSWMaxDeceleration</Name>
+    <Description name="x">Maximum deceleration magnitude (software limit)</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1143" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>1000</Default>
+    <Name name="x">fSWMaxJerk</Name>
+    <Description name="x">Maximum jerk magnitude (software limit)</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1207" type="std:INT">
+    <Attributes download="true" functional="false" />
+    <Default>0</Default>
+    <Name name="x">eCheckPositionLag</Name>
+    <Description name="x">Position lag mode</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1208" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>1.0</Default>
+    <Name name="x">fMaxPositionLag</Name>
+    <Description name="x">Maximum position lag (magnitude) [u]</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1203" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>0</Default>
+    <Name name="x">fSWLimitDeceleration</Name>
+    <Description name="x">Deceleration for stop on software error [u/s²]</Description>
+    <Custom />
+  </Parameter>
+
+  <Parameter ParameterId="1250" type="std:LREAL">
+    <Attributes download="true" functional="false" />
+    <Default>0</Default>
+    <Name name="x">fSWErrorMaxDistance</Name>
+    <Description name="x">Maximum distance that may be travelled for ramping down after a software error has been detected [u]</Description>
+    <Custom />
+  </Parameter>
+</ParameterSection>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceDescription
+    xmlns="http://www.3s-software.com/schemas/DeviceDescription-1.0.xsd"
+    xmlns:ts="http://www.3s-software.com/schemas/TargetSettings-0.1.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <Types namespace="localTypes" />
+  <Strings namespace="localStrings" />
+  <Files namespace="local" />
+
+  <Device hideInCatalogue="false">
+    <DeviceIdentification>
+      <Type>8000</Type>
+      <Id>FFFF A652</Id>
+      <Version>0.6.3.2</Version>
+    </DeviceIdentification>
+
+    <CompatibleVersions />
+
+    <DeviceInfo>
+      <Name name="localStrings:TypeName">Arduino Motion Communication</Name>
+      <Description name="localStrings:TypeDescription">Shared USB serial communication for FastArduinoMotion axes.</Description>
+      <Vendor name="localStrings:Vendor">Universitat Jaume I</Vendor>
+      <OrderNumber>FAM-COMM</OrderNumber>
+    </DeviceInfo>
+
+    <Connector
+        connectorId="1"
+        moduleType="8652"
+        interface="Common.PCI"
+        role="child"
+        explicit="false"
+        hostpath="-1">
+
+      <InterfaceName name="localStrings:PCIInterface">Arduino Motion Communication:</InterfaceName>
+      <Slot count="1" allowEmpty="false" />
+      <Var />
+
+      <HostParameterSet>
+        <ParameterSection>
+          <Name name="localStrings:CommunicationSection">Arduino communication</Name>
+
+          <Parameter ParameterId="20000" type="std:DWORD">
+            <Attributes
+                channel="none"
+                download="true"
+                functional="false"
+                offlineaccess="readwrite"
+                onlineaccess="read" />
+            <Default>3</Default>
+            <Name name="localStrings:ComPortNumber">COM port number</Name>
+            <Description name="localStrings:ComPortNumberDescription">Enter only the numeric part: 3 for COM3, 34 for COM34.</Description>
+          </Parameter>
+        </ParameterSection>
+      </HostParameterSet>
+
+      <DriverInfo needsBusCycle="false">
+        <RequiredLib
+            libname="FastArduinoMotion"
+            vendor="Universitat Jaume I"
+            version="0.6.3.2"
+            identifier="deviceLib">
+
+          <FBInstance
+              basename="$(DeviceName)"
+              fbname="DEV_ArduinoMotionCommunication">
+
+            <Initialize methodName="Initialize" />
+
+            <CyclicCall
+                methodname="AfterReadInputs"
+                task="#buscycletask"
+                whentocall="afterReadInputs" />
+
+          </FBInstance>
+        </RequiredLib>
+      </DriverInfo>
+    </Connector>
+  </Device>
+</DeviceDescription>
