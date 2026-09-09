@@ -98,30 +98,42 @@ A recommended repository structure is:
 ```text
 FastArduinoMotion/
 │
-├── README.md
-│
-├── docs/
-│   └── TECHNICAL_DOCUMENTATION.md
+├── Arduino/
+│   └── FastMotionNode3AxisV2/
+│       ├── examples/
+│       │   ├── 01_ThreeAxes_AutonomousTest/
+│       │   └── 02_ThreeAxes_BinaryNode/
+│       │
+│       ├── src/
+│       │   ├── FastMotionNode3Axis.cpp
+│       │   ├── FastMotionNode3Axis.h
+│       │   └── FastMotionProtocol3Axis.h
+│       │
+│       ├── CHANGELOG.md
+│       ├── library.properties
+│       ├── PROTOCOL_V2.md
+│       └── README.md
 │
 ├── CODESYS/
-│   ├── FastArduinoMotion.library
 │   ├── DeviceDescriptions/
-│   │   ├── StandardParameters.xml
 │   │   ├── ArduinoMotionCommunication_0_6_3_2.devdesc.xml
 │   │   ├── ArduinoStepperAxis1_0_6_3_2.devdesc.xml
 │   │   ├── ArduinoStepperAxis2_0_6_3_2.devdesc.xml
-│   │   └── ArduinoStepperAxis3_0_6_3_2.devdesc.xml
+│   │   ├── ArduinoStepperAxis3_0_6_3_2.devdesc.xml
+│   │   ├── SM3_Drive_FAM.ico
+│   │   └── StandardParameters.xml
 │   │
-│   └── Examples/
+│   ├── Examples/
+│   │   └── PruebaLibreria0632.project
+│   │
+│   └── Library/
+│       ├── FastArduinoMotion_0_6_3_2.library
+│       └── FastArduinoMotion_0_6_3_2.compiledlibrary
 │
-├── Arduino/
-│   ├── FastMotionNode.h
-│   ├── FastMotionNode.cpp
-│   ├── FastMotionProtocol.h
-│   └── FastMotionProtocol.cpp
+├── Docs/
+│   └── TECHNICAL_DOCUMENTATION.md
 │
-└── protocol/
-    └── protocol_v2.md
+└── README.md
 ```
 
 ---
