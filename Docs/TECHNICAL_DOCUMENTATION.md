@@ -31,11 +31,11 @@ The complete system can be represented as:
 │                                                    │
 │                    PLC_PRG                         │
 │                                                    │
-│       MC_Power / MC_MoveAbsolute / MC_Halt         │
+│       MC_Power / MC_MoveAbsolute / MC_Halt        │
 │                    / MC_Reset                      │
 │                         │                          │
 │                         ▼                          │
-│               SoftMotion Axis                      │
+│               SoftMotion Axis                     │
 │          ┌────────┬────────┬────────┐              │
 │          │ Axis1  │ Axis2  │ Axis3  │              │
 │          └───┬────┴───┬────┴───┬────┘              │
@@ -43,11 +43,11 @@ The complete system can be represented as:
 │              ▼        ▼        ▼                   │
 │          AXIS_REF_ArduinoStepperAxis               │
 │                         │                          │
-│                         │                          │
-│              ┌──────────▼──────────┐               │
-│              │ DEV_ArduinoMotion   │               │
-│              │ Communication       │               │
-│              └──────────┬──────────┘               │
+│                         │                         │
+│              ┌──────────▼──────────┐              │
+│              │ DEV_ArduinoMotion   │              │
+│              │ Communication       │              │
+│              └──────────┬──────────┘              │
 │                         │                          │
 │                 FB_Arduino3AxisController          │
 │                         │                          │
@@ -65,10 +65,10 @@ The complete system can be represented as:
                        Timer1
                           │
                           ▼
-                      STEP / DIR
+                    STEP / DIR
                           │
                           ▼
-                         Motor
+                       Motor
 
 ```
 
